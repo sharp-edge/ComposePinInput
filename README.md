@@ -1,24 +1,24 @@
-# PinTextField - A Jetpack Compose Library
+# ComposePinInput - A Jetpack Compose PIN Entry Library
 
-Welcome to the `PinTextField` library for Android, built with Kotlin and Jetpack Compose using Material Design 3 principles. This customizable and versatile library allows you to easily integrate pin entry fields into your Compose UI, ideal for pin code, OTP, or password input.
+Welcome to the `ComposePinInput` library for Android, built with Kotlin and Jetpack Compose using Material Design 3 principles. This customizable and versatile library allows you to easily integrate pin entry fields into your Compose UI, ideal for pin code, OTP, or password input.
 
 
-The GIF below demonstrates the `PinEntryTextField` in a live application scenario. Following the GIF, you will find the example code that shows how to implement this functionality using Jetpack Compose.
+The GIF below demonstrates the `ComposePinInput` in a live application scenario. Following the GIF, you will find the example code that shows how to implement this functionality using Jetpack Compose.
 
 
 <img src="pintextfield_1.gif" width="300" />
 
-Using the `PinEntryTextField` into your Jetpack Compose layout is straightforward. The example below demonstrates a basic setup. In this setup, we define a `PinTextFieldPreview` composable function that maintains the state of the entered pin. The `PinEntryTextField` composable takes the current `pin` value, a lambda to handle value changes, and an action to perform when the pin has been completely entered. It also allows you to customize the cell size and apply a predefined style, such as a box around each digit.
+Using the `ComposePinInput` into your Jetpack Compose layout is straightforward. The example below demonstrates a basic setup. In this setup, we define a `Preview` composable function that maintains the state of the entered pin. The `ComposePinInput` composable takes the current `pin` value, a lambda to handle value changes, and an action to perform when the pin has been completely entered. It also allows you to customize the cell size and apply a predefined style, such as a box around each digit.
 
 ```kotlin
 @Composable
-fun PinTextFieldPreview() {
+fun Preview() {
     // State to hold the value of the pin
     var pin by remember { mutableStateOf("") }
     // Local context to show a toast message
     val context = LocalContext.current
   
-    PinEntryTextField(
+    ComposePinInput(
         value = pin,
         onValueChange = {
             pin = it // Update the state when the value changes
@@ -28,7 +28,7 @@ fun PinTextFieldPreview() {
             Toast.makeText(context, "$it", Toast.LENGTH_SHORT).show()
         },
 
-        style = PinFieldStyle.BOX
+        style = ComposePinInputStyle.BOX
     )
 }
 ```
@@ -42,13 +42,13 @@ Here is a version that masks the input, displaying asterisks (*) instead of the 
 
 ```kotlin
 @Composable
-fun PinTextFieldPreview() {
+fun Preview() {
     // State to hold the value of the pin
     var pin by remember { mutableStateOf("") }
     // Local context to show a toast message
     val context = LocalContext.current
   
-    PinEntryTextField(
+    ComposePinInput(
         value = pin,
         mask= '*', // Masks the input with asterisks
         onValueChange = {
@@ -59,22 +59,22 @@ fun PinTextFieldPreview() {
             Toast.makeText(context, "$it", Toast.LENGTH_SHORT).show()
         },
 
-        style = PinFieldStyle.BOX
+        style = ComposePinInputStyle.BOX
     )
 }
 ```
 ## Custom Cell Border Colors
-Enhance the visual appeal of your `PinEntryTextField` by customizing the cell border colors, including the color change when a cell is focused:
+Enhance the visual appeal of your `ComposePinInput` by customizing the cell border colors, including the color change when a cell is focused:
 
 <img src="pintextfield_3.gif" width="300" />
 
 ```kotlin
 @Composable
-fun PinTextFieldPreview() {
+fun Preview() {
     var pin by remember { mutableStateOf("") }
     val context = LocalContext.current
   
-    PinEntryTextField(
+    ComposePinInput(
         value = pin,
         mask= '*',
         cellBorderColor = Color.Blue, // Just pass the color here for the cell/box border
@@ -87,14 +87,14 @@ fun PinTextFieldPreview() {
             Toast.makeText(context, "$it", Toast.LENGTH_SHORT).show()
         },
 
-        style = PinFieldStyle.BOX
+        style = ComposePinInputStyle.BOX
     )
 }
 ```
 
 # Underline Style Customization
-You can change the shape of `PinEntryTextField` instead of Boxes simple underlines are also supported
-For a subtler look, `PinEntryTextField` supports an underline style instead of boxes. The following example demonstrates this style:
+You can change the shape of `ComposePinInput` instead of Boxes simple underlines are also supported
+For a subtler look, `ComposePinInput` supports an underline style instead of boxes. The following example demonstrates this style:
 
 
 <img src="pintextfield_4.gif" width="300" />
@@ -102,12 +102,12 @@ For a subtler look, `PinEntryTextField` supports an underline style instead of b
 
 ```kotlin
 @Composable
-fun PinTextFieldPreview() {
+fun Preview() {
     var pin by remember { mutableStateOf("") }
     val context = LocalContext.current
 
   // Underline style with custom border colors
-    PinEntryTextField(
+    ComposePinInput(
         value = pin,
         mask= '*',
         cellBorderColor = Color.DarkGray, // Just pass the color here for the cell/box border
@@ -120,7 +120,7 @@ fun PinTextFieldPreview() {
             Toast.makeText(context, "$it", Toast.LENGTH_SHORT).show()
         },
 
-        style = PinFieldStyle.UNDERLINE // Apply the underline style
+        style = ComposePinInputStyle.UNDERLINE // Apply the underline style
     )
 }
 ```
@@ -131,12 +131,12 @@ Customize the bfocu ackground color and font color
 
 ```kotlin
 @Composable
-fun PinTextFieldPreview() {
+fun Preview() {
     var pin by remember { mutableStateOf("") }
     val context = LocalContext.current
 
     // Box style with dynamic background and font colors
-    PinEntryTextField(
+    ComposePinInput(
         value = pin,
         mask= '*',
         cellBorderColor = Color.DarkGray, // Just pass the color here for the cell/box border
@@ -151,25 +151,25 @@ fun PinTextFieldPreview() {
             Toast.makeText(context, "$it", Toast.LENGTH_SHORT).show()
         },
 
-        style = PinFieldStyle.BOX // // Retaining the box style
+        style = ComposePinInputStyle.BOX // // Retaining the box style
     )
 }
 ```
 
 # Flexibility in Number of Cells and Mask Character
-`PinEntryTextField` is highly flexible, allowing you to define the number of cells and choose a custom mask character, as illustrated below:
+`ComposePinInput` is highly flexible, allowing you to define the number of cells and choose a custom mask character, as illustrated below:
 
 <img src="pintextfield_6.gif" width="300" />
 
 
 ```kotlin
 @Composable
-fun PinTextFieldPreview() {
+fun Preview() {
     var pin by remember { mutableStateOf("") }
     val context = LocalContext.current
 
   // Custom number of cells and mask character
-    PinEntryTextField(
+    ComposePinInput(
         value = pin,
         mask = '⚫', // // Choose any character as the mask
         maxSize = 6, // // Define the number of cells, 4 are default if this property is not used
@@ -181,7 +181,7 @@ fun PinTextFieldPreview() {
             Toast.makeText(context, "$it", Toast.LENGTH_SHORT).show()
         },
 
-        style = PinFieldStyle.BOX // // Using the box style
+        style = ComposePinInputStyle.BOX // // Using the box style
     )
 }
 ```
