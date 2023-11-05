@@ -228,6 +228,16 @@ To use [Library Name], follow these steps:
       implementation ("com.github.sharp-edge:ComposePinInput:1.0.3")
     }
    ```
+
+
+## Bugs and Issues
+
+If you encounter any bugs or issues with this library, please report them in the [Issues](https://github.com/sharp-edge/ComposePinInput/issues) section of the repository. Before creating a new issue, please check to see if a similar issue has already been reported by another user.
+
+When reporting an issue, try to include as much information as possible about the environment where the bug occurred, steps to reproduce the issue, expected behavior, and any other information that might help us resolve the problem. Screenshots or code snippets can also be very helpful.
+
+
+   
 ## License
 
 This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
