@@ -74,7 +74,7 @@ fun PinTextFieldPreview() {
         onValueChange = {
             pin = it
         },
-        cellSize = 70.dp,
+        cellSize = 60.dp,
         onPinEntered = {
             Log.d("Pin_entered", "Pin = $it")
             Toast.makeText(context, "$it", Toast.LENGTH_SHORT).show()

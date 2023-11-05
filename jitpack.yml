@@ -3,3 +3,6 @@ subprojects:
     build:
       - "clean"
       - "build"
+
+jdk:
+  - openjdk11
