@@ -230,6 +230,23 @@ To use [Library Name], follow these steps:
    ```
 
 
+## Known Issues
+
+As of the current version, the library has the following known limitation:
+
+- **Theme Support**: The `ComposePinInput` component does not currently support centralized theme management. This means it does not automatically adopt colors, fonts, and other styling properties from the app's theme.
+
+  - *Impact*: All parameters for color, font size, and other styling must be explicitly passed to the component; it will not inherit these from the app's theme settings.
+  - *Status*: This is a known design limitation in the current release. Future versions may include improved theme support.
+
+We welcome contributions and suggestions on how to enhance theming capabilities. If you have ideas or solutions, please share them by opening an [issue](https://github.com/sharp-edge/ComposePinInput/issues) or submitting a pull request.
+
+Please report any new issues you encounter, and I will aim to address them in subsequent releases.
+
+
+
+
+
 ## Bugs and Issues
 
 If you encounter any bugs or issues with this library, please report them in the [Issues](https://github.com/sharp-edge/ComposePinInput/issues) section of the repository. Before creating a new issue, please check to see if a similar issue has already been reported by another user.
