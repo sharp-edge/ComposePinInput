@@ -185,3 +185,51 @@ fun Preview() {
     )
 }
 ```
+
+
+# How to Use
+
+To use [Library Name], follow these steps:
+
+## Installation
+
+### Gradle Setup
+
+1. **Add the JitPack repository to your build file, if not already added**
+
+   Add the following in your root `build.gradle` at the end of repositories:
+
+   ```gradle
+   allprojects {
+     repositories {
+       ...
+       maven { url 'https://jitpack.io' }
+     }
+   }
+   ```
+   **Or if you're using build.gradle.kts:**
+   ```gradle
+   allprojects {
+      repositories {
+    ...
+        maven(url = "https://jitpack.io")
+      }
+    }
+   ```
+2. **Add the dependency**
+   ```gradle
+   dependencies {
+      implementation 'com.github.sharp-edge:ComposePinInput:1.0.3'
+    }
+   ```
+   **for build.gradle.kts:**
+   ```gradle
+   dependencies {
+      implementation ("com.github.sharp-edge:ComposePinInput:1.0.3")
+    }
+   ```
+## License
+
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+
+   
