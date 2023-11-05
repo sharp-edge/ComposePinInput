@@ -5,4 +5,4 @@ subprojects:
       - "build"
 
 jdk:
-  - openjdk11
+  - openjdk17

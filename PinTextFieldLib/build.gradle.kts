@@ -63,7 +63,7 @@ dependencies {
 //    }
 //}
 
-
+val libraryVersion: String by project
 // Place this at the end of your build.gradle.kts file
 afterEvaluate {
     publishing {
@@ -71,7 +71,7 @@ afterEvaluate {
             create<MavenPublication>("release") {
                 groupId = "com.sharpedge"
                 artifactId = "ComposePinInput"
-                version = "1.0.0"
+                version = libraryVersion
 
                 // This should match the output of your printComponents task
                 from(components["release"])
