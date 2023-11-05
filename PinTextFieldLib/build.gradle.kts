@@ -1,7 +1,8 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    id("maven-publish")
+    //id("maven-publish")
+    `maven-publish`
 }
 
 android {
@@ -63,7 +64,7 @@ dependencies {
 //    }
 //}
 
-val libraryVersion: String by project
+val libraryVersion: String = project.property("libraryVersion") as String
 // Place this at the end of your build.gradle.kts file
 afterEvaluate {
     publishing {
