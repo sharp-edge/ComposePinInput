@@ -125,7 +125,7 @@ fun Preview() {
 }
 ```
 # Dynamic Background and Font Colors
-Customize the bfocu ackground color and font color
+Customize the on focus background color and font color
 
 <img src="pintextfield_5.gif" width="300" />
 
