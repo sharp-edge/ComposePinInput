@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.sharpedge.pintextfield"
-        minSdk = 27
+        minSdk = 24
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"

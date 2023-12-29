@@ -41,7 +41,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 
-
 enum class ComposePinInputStyle {
     BOX,
     UNDERLINE
@@ -60,6 +59,7 @@ public fun ComposePinInput(
     fontColor: Color = Color.LightGray,
     cellBorderColor: Color = Color.Gray,
     rowPadding: Dp = 8.dp,
+    cellPadding: Dp = 16.dp,
     cellSize: Dp = 50.dp,
     cellBorderWidth: Dp = 1.dp,
     textFontSize: TextUnit = 20.sp,
@@ -110,7 +110,7 @@ public fun ComposePinInput(
         // UI for the Pin
         val boxWidth = cellSize
         Row(
-            horizontalArrangement = Arrangement.spacedBy(16.dp),
+            horizontalArrangement = Arrangement.spacedBy(cellPadding),
             modifier = Modifier
                 .padding(rowPadding)
         ) {
@@ -152,7 +152,6 @@ public fun ComposePinInput(
                     }
 
 
-
                 } else {
                     // Underline style logic here
                     Box(
@@ -172,7 +171,10 @@ public fun ComposePinInput(
                                     else -> cellBorderColor
                                 },
                                 start = Offset(x = 0f, y = size.height - borderThickness.toPx()),
-                                end = Offset(x = size.width, y = size.height - borderThickness.toPx()),
+                                end = Offset(
+                                    x = size.width,
+                                    y = size.height - borderThickness.toPx()
+                                ),
                                 strokeWidth = borderThickness.toPx()
                             )
                         })
@@ -184,7 +186,9 @@ public fun ComposePinInput(
                             }
                             Text(
                                 text = displayChar.toString(),
-                                modifier = Modifier.align(Alignment.TopCenter).padding(top = (cellSize - lineHeightDp) / 2),
+                                modifier = Modifier
+                                    .align(Alignment.TopCenter)
+                                    .padding(top = (cellSize - lineHeightDp) / 2),
                                 fontSize = textFontSize,
                                 color = fontColor
                             )
