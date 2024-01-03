@@ -74,6 +74,7 @@ fun PinTextFieldPreview() {
         onValueChange = {
             pin = it
         },
+        cellPadding = 16.dp,
         cellSize = 60.dp,
         onPinEntered = {
             Log.d("Pin_entered", "Pin = $it")
