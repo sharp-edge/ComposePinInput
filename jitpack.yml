@@ -7,3 +7,4 @@ subprojects:
 jdk:
   - openjdk17
 # Updated: 2026-04-15
+# Verified: 2026-04-23
